@@ -22,8 +22,7 @@ def get_songs(artist_name, cache):
             artist = GeniusApiRequests().get_artist_songs(artist_name=artist_name)
             if artist:        
                 redis_client.set_cache(key=artist_name.lower(), data=artist.dict())
-                redis_client.set_expiration(key=artist_name.lower())
-                print('from api')
+                redis_client.set_expiration(key=artist_name.lower())                
             else:
                 return "<h1>Artist not found</h1>"
         else:
@@ -31,8 +30,7 @@ def get_songs(artist_name, cache):
                 id=cached_artist['id'],
                 artist=cached_artist['artist'],
                 most_popular_songs=cached_artist['most_popular_songs']
-            )
-            print("from cache")            
+            )            
     
     else:        
         artist = GeniusApiRequests().get_artist_songs(artist_name=artist_name)
