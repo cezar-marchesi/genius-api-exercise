@@ -12,7 +12,7 @@ class GeniusApiRequests:
         genius = Genius(access_token=self.client_token)
         result = genius.search_artist(
             artist_name=artist_name,
-            max_songs=2,
+            max_songs=10,
             sort='popularity'
             )
 
