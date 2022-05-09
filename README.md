@@ -48,6 +48,6 @@ AWS_ACCESS_KEY_ID=
 AWS_SECRET_ACCESS_KEY=
 ```
 
-With the .env file ready and the redis server and dynamodb, just build and run the Dockerfile. The Dockerfile is exposing the port 7007.
+With the .env file ready and the redis server and dynamodb, just run the app.py
 
 
